@@ -1,0 +1,2 @@
+#! /bin/sh
+defaults read /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/XProtect.meta LastModification
