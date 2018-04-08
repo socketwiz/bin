@@ -1,0 +1,1 @@
+/Users/socketwiz/dotfiles/.default-difftool.sh
