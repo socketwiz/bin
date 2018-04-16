@@ -1,3 +1,15 @@
-#! /bin/sh
-brew update
-brew upgrade
+#! /usr/bin/env bash
+PLATFORM=`uname`
+
+case $PLATFORM in
+    Darwin)
+        brew update
+        brew upgrade
+        brew cleanup
+        ;;
+    Linux)
+        sudo pacman --noconfirm -Syyu
+        sudo pacman --noconfirm -Rns $(pacman -Qtdq)
+        ;;
+esac
+
