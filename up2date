@@ -9,8 +9,11 @@ case $PLATFORM in
         brew cleanup
         ;;
     Linux)
-        sudo pacman --noconfirm -Syyu
-        sudo pacman --noconfirm -Rns $(pacman -Qtdq)
+        sudo pacman --noconfirm -S archlinux-keyring # update the keyring
+        sudo pacman --noconfirm -Syu # update the packages
+        if pacman -Qtdq ; then
+            sudo pacman --noconfirm -Rns $(pacman -Qtdq) # remove orphans
+        fi
         ;;
 esac
 
