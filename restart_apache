@@ -1,3 +1,0 @@
-#! /bin/bash
-sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist

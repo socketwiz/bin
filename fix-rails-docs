@@ -1,9 +1,0 @@
-#! /bin/bash
-# FIXES: 
-# File not found: lib
-# ERROR:  While generating documentation for rails-xxx
-
-gem install rdoc-data
-rdoc-data --install
-gem rdoc --all --overwrite
-rdoc-data

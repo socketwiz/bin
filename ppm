@@ -1,2 +1,0 @@
-#! /bin/sh
-sudo perl -MCPAN  -eshell
