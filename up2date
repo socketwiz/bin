@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+
 PLATFORM=`uname`
 
 case $PLATFORM in
@@ -9,13 +10,9 @@ case $PLATFORM in
         brew cleanup
         ;;
     Linux)
-        sudo pacman --noconfirm -S archlinux-keyring # update the keyring
-        sudo pacman --noconfirm -Syu # update the packages
-        if pacman -Qtdq ; then
-            sudo pacman --noconfirm -Rns $(pacman -Qtdq) # remove orphans
-        fi
-        yay -Syu # update aur packages
-        yay -Yc # cleanup unneeded dependencies
+        sudo apt update
+        sudo apt upgrade -y
+        sudo apt autoremove
         ;;
 esac
 
