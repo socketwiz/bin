@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+
+directory_basename=${PWD##*/}
+
+if ! tmux has-session -t "$directory_basename"
+then
+    tmux new-session -s "$directory_basename" -n Server -d
+
+    # create moar windows
+    tmux new-window -t "$directory_basename":1 -n Tests
+    tmux new-window -t "$directory_basename":2 -n Zsh
+
+    # run some command in the first window
+    if [ -z "$1" ]
+    then
+        tmux send-keys -t "$directory_basename":0.0 "cd ${PWD}" C-m
+    else
+        tmux send-keys -t "$directory_basename":0.0 "cd ${PWD} && ${1}" C-m
+    fi
+
+    # just get to the proper path in the next windows
+    tmux send-keys -t "$directory_basename":1.0 "cd ${PWD}" C-m
+    tmux send-keys -t "$directory_basename":2.0 "cd ${PWD}" C-m
+
+    # select the server window and pane
+    tmux select-window -t "$directory_basename":0.0
+fi
+tmux attach -t "$directory_basename"
