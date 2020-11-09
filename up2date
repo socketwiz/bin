@@ -6,7 +6,7 @@ case $PLATFORM in
     Darwin)
         brew update
         brew upgrade
-        brew cask upgrade
+        brew upgrade --cask
         brew cleanup
         ;;
     Linux)
