@@ -1,2 +1,0 @@
-#!/bin/sh
-openssl base64 -d -in "$1" -out /dev/stdout

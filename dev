@@ -20,10 +20,10 @@ then
         tmux send-keys -t "$directory_basename":0.0 "cd ${PWD} && ${1}" C-m
     fi
 
-    tmux send-keys -t "$directory_basename":1.0 "cd ${PWD}/picnic-ui" C-m
-    tmux send-keys -t "$directory_basename":2.0 "cd ${PWD}/picnic-ui" C-m
-    tmux send-keys -t "$directory_basename":3.0 "cd ${PWD}/picnic-ui" C-m
-    tmux send-keys -t "$directory_basename":4.0 "cd ${PWD}/picnic-ui" C-m
+    tmux send-keys -t "$directory_basename":1.0 "cd ${PWD}" C-m
+    tmux send-keys -t "$directory_basename":2.0 "cd ${PWD}" C-m
+    tmux send-keys -t "$directory_basename":3.0 "cd ${PWD}" C-m
+    tmux send-keys -t "$directory_basename":4.0 "cd ${PWD}" C-m
 
     # select the server window and pane
     tmux select-window -t "$directory_basename":0.0

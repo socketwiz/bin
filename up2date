@@ -11,7 +11,7 @@ case $PLATFORM in
         ;;
     Linux)
         sudo apt-get update
-        sudo apt-get upgrade -y
+        sudo apt-get upgrade -y --allow-downgrades --with-new-pkgs
         sudo apt-get autoremove -y
         rustup update
         ;;
