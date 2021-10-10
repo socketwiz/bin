@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
 
-#exec emacsclient --alternate-editor="" -c -nw "$@"
 emacsclient -c -nw "$@"
 
