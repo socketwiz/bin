@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+OLD_EMAIL="$1"
+CORRECT_EMAIL="$2"
+
+git rebase -i --root
