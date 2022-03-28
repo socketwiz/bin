@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+CHECKUP_DIR="${HOME}"/dev/checkup-service
+
+pushd "${CHECKUP_DIR}" || exit
+sudo docker-compose down
+./gradlew clean bootJar
+sudo docker-compose up -d --build --remove-orphans
+sudo docker-compose logs --follow
+popd || exit

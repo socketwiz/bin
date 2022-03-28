@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+CISO_DIR="${HOME}"/dev/ciso-service
+set -x
+pushd "${CISO_DIR}" || exit
+sudo docker-compose down
+sudo docker network create checkup-service_local-net
+./gradlew clean -PangularProfile=local bootJar -x :picnic-ui:npm_run_build
+sudo docker-compose up -d --build --remove-orphans
+sudo docker-compose logs --follow
+popd || exit

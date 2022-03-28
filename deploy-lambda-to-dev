@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+aws --region us-east-1 ecr get-login-password | sudo docker login --username AWS --password-stdin 540492174487.dkr.ecr.us-east-1.amazonaws.com
+sudo docker build -t picnic/lambda:auth-key-dev . --build-arg function_name=auth-key
+sudo docker tag picnic/lambda:auth-key-dev 540492174487.dkr.ecr.us-east-1.amazonaws.com/picnic/lambda:auth-key-dev
+sudo docker push 540492174487.dkr.ecr.us-east-1.amazonaws.com/picnic/lambda:auth-key-dev
+aws lambda update-function-code --function-name auth-key-dev --image-uri 540492174487.dkr.ecr.us-east-1.amazonaws.com/picnic/lambda:auth-key-dev
+

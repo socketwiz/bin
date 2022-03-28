@@ -4,9 +4,9 @@
 #
 
 # try neovim first
-if [ -f /usr/bin/nvim ]
+if [ -f /usr/local/bin/nvim ]
 then
-  binary="/usr/bin/nvim"
+  binary="/usr/local/bin/nvim"
   VIMPATH="$binary -d"
 elif [[ -f /usr/bin/mvim ]]
 then
