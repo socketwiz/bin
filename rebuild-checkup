@@ -4,8 +4,8 @@ CHECKUP_DIR="${HOME}"/dev/checkup-service
 
 pushd "${CHECKUP_DIR}" || exit
 sudo docker-compose down
-#./gradlew clean bootJar
-./gradlew clean build
+./gradlew clean bootJar
+#./gradlew clean build
 sudo docker-compose up -d --build --remove-orphans
 sudo docker-compose logs --follow
 popd || exit
