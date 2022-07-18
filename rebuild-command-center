@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-CISO_DIR="${HOME}"/dev/ciso-service
+CC_DIR="${HOME}"/dev/command-center
 set -x
-pushd "${CISO_DIR}" || exit
+pushd "${CC_DIR}" || exit
 sudo docker-compose down
 sudo docker network create local-net
 ./gradlew clean -PangularProfile=local bootJar -x :picnic-ui:npm_run_build
