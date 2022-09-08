@@ -10,6 +10,7 @@ npm install -g bash-language-server
 # Javascript / TypeScript
 npm install -g typescript
 npm install -g typescript-language-server
+npm install -g vscode-langservers-extracted
 #
 # HTML
 npm install -g vscode-html-languageserver-bin
