@@ -1,15 +1,13 @@
 #! /usr/bin/env bash
 
-# Angular
-npm install -g @angular/language-server
-npm install -g @angular/language-service
 #
 # Bash
 npm install -g bash-language-server
 #
 # Javascript / TypeScript
-npm install -g typescript
-npm install -g typescript-language-server
+npm install -g prettier-eslint-cli
+npm install -g prettier
+npm install -g react-devtools
 npm install -g vscode-langservers-extracted
 #
 # HTML
