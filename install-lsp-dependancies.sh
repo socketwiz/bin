@@ -4,12 +4,13 @@
 # Bash
 npm install -g bash-language-server
 #
-# Javascript / TypeScript
+# Javascript
 npm install -g prettier-eslint-cli
 npm install -g prettier
 npm install -g react-devtools
 npm install -g vscode-langservers-extracted
 npm install -g typescript typescript-language-server
+npm install -g @vue/language-server
 #
 # HTML
 npm install -g vscode-html-languageserver-bin
@@ -18,7 +19,7 @@ npm install -g vscode-html-languageserver-bin
 npm install -g vscode-json-languageserver
 #
 # Python
-pip3 install python-language-server\[all\]
+pip3 install python-lsp-server
 #
 # Rust
 rustup component add rls rust-analysis rust-src

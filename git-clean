@@ -1,0 +1,18 @@
+#! /usr/bin/env bash
+
+# Get all local branches that start with "feature"
+branches=$(git branch --list 'feature*' 'bug*' 'fix*')
+
+# Check if there are any branches to delete
+if [ -z "$branches" ]; then
+    echo "No branches starting with 'feature', 'bug', or 'fix' found."
+    exit 0
+fi
+
+# Iterate over each branch and delete it
+for branch in $branches; do
+    # Remove leading spaces from branch name
+    branch=$(echo $branch | xargs)
+    echo "Deleting branch: $branch"
+    git branch -D "$branch"
+done
